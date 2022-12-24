@@ -17,4 +17,8 @@ public class RobotMap {
     public interface AIN {
     
     }
+
+    public interface PCM {
+
+    }
 }

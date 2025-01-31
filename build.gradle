@@ -82,9 +82,6 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    implementation group: 'com.ctre.phoenix6', name: 'wpiapi-java', version: '24.0.0-beta-8'
-    implementation group: 'com.ctre.phoenix', name: 'api-java', version: '5.32.0-beta-5'
-    implementation group: 'com.ctre.phoenix', name: 'wpiapi-java', version: '5.31.0'
 }
 
 test {

@@ -6,8 +6,14 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.MoveDucksMove;
+import frc.robot.subsystems.Ducks;
 
 public class Robot extends TimedRobot {
+
+    public final static double SPEED = 0.1;
+    public final Ducks ducks = new Ducks();
+    public final MoveDucksMove moveDucksMove = new MoveDucksMove(SPEED);
 
     @Override
     public void robotInit() {
@@ -31,7 +37,7 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-
+        moveDucksMove.schedule();
     }
 
     @Override

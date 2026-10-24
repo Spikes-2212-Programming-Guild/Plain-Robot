@@ -4,19 +4,26 @@
 
 package frc.robot;
 
+import com.spikes2212.dashboard.RootNamespace;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 public class Robot extends TimedRobot {
 
+    RootNamespace namespace = new RootNamespace("robot");
+    Shooter shooter = Shooter.getInstance();
+
     @Override
     public void robotInit() {
-
+        namespace.putCommand("shoot1", new Shoot());
+        namespace.putNumber("shooter speed", shooter.getSpeed());
     }
 
     @Override
     public void robotPeriodic() {
         CommandScheduler.getInstance().run();
+        namespace.update();
+        shooter.updateNamespace();
     }
 
     @Override
